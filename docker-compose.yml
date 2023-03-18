@@ -22,6 +22,10 @@ services:
     image: postgres:14.0
     container_name: db_odoo
     restart: unless-stopped
+    ports:
+      - 5432:5432/tcp
+    expose:
+          - '5432'
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
